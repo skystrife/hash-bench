@@ -1,0 +1,15 @@
+_site/
+build/
+obj/
+doc/
+*.a
+*.dat
+.*.swp
+*.o
+*.class
+.*
+data/ceeaus
+data/breast-cancer
+biicode.conf
+bii/
+bin/
