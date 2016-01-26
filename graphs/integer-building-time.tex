@@ -1,0 +1,32 @@
+\documentclass[tikz,convert=pdf2svg]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.12}
+
+\begin{document}
+  \begin{tikzpicture}
+    \begin{axis}[xlabel={insertions (millions)},ylabel={elapsed seconds},
+        legend style={font=\small,at={(0.02,0.98)},anchor=north west},
+        width=2\textwidth,height=\textwidth,
+        xmin=1,xmax=100]
+
+      \addplot+ [mark=none]
+        table [x expr={\thisrow{num-inserts} / 1000000},
+               y expr={\thisrow{build-time} / 1000}]
+        {clang/unordered-map-ints-farm.tsv};
+
+      \addplot+[mark=none]
+        table [x expr={\thisrow{num-inserts} / 1000000},
+               y expr={\thisrow{build-time} / 1000}]
+        {clang/unordered-map-ints-std.tsv};
+
+      \addplot+[mark=none]
+        table [x expr={\thisrow{num-inserts} / 1000000},
+               y expr={\thisrow{build-time} / 1000}]
+        {clang/probe-map-ints.tsv};
+
+      \legend{clang unordered\_map w/ farm hash\\
+              clang unordered\_map w/ std hash\\
+              clang probe\_map\\}
+    \end{axis}
+  \end{tikzpicture}
+\end{document}
