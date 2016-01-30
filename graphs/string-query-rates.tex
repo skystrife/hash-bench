@@ -25,10 +25,10 @@
                y expr={\thisrow{query-100} / 1000000}]
         {clang/unordered-map-strings-std.tsv};
 
-      %\addplot+[mark=none]
-      %  table [x expr={\thisrow{num-inserts} / 1000000},
-      %         y expr={\thisrow{query-100} / 1000000}]
-      %  {gcc/unordered-map-ints-std.tsv};
+      \addplot+[mark=none]
+        table [x expr={\thisrow{num-inserts} / 1000000},
+               y expr={\thisrow{query-100} / 1000000}]
+        {gcc/unordered-map-strings-std.tsv};
 
       \addplot+[mark=none]
         table [x expr={\thisrow{num-inserts} / 1000000},
@@ -43,7 +43,7 @@
       \legend{clang unordered\_map w/ farm hash\\
               gcc unordered\_map w/ farm hash\\
               clang unordered\_map w/ std hash\\
-              %gcc unordered\_map w/ std hash\\
+              gcc unordered\_map w/ std hash\\
               clang probe\_map\\
               gcc probe\_map\\}
     \end{axis}
