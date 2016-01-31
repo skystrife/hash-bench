@@ -5,7 +5,6 @@
 #include <sys/resource.h>
 
 #include "cpptoml.h"
-#include "../../builds/smhasher/src/metahash.h"
 #include "meta/hashing/probe_map.h"
 #include "meta/util/random.h"
 #include "meta/util/time.h"
